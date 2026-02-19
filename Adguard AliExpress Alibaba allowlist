@@ -1,0 +1,32 @@
+! AliExpress / Alibaba functional allowlist
+! Designed for AdGuard Home
+! Excludes known ad / marketing endpoints
+
+! --- Core domains ---
+||aliexpress.com^
+||alibaba.com^
+||intl.aliexpress.com^
+||m.aliexpress.com^
+
+! --- CDN / static content (images, CSS, JS) ---
+||alicdn.com^
+||g.alicdn.com^
+||aeproductsourcesite.alicdn.com^
+||aliexpress-media.com^
+||alibabausercontent.com^
+||tbcdn.cn^
+||tbcache.com^
+
+! --- Backend APIs / cart / login / checkout ---
+||mmstat.com^
+||amdc.aliexpress.com^
+||acs.alibaba.com^
+||seller-acs.alibaba.com^
+
+! --- Security / anti-bot / validation ---
+||fourier.taobao.com^
+||taobao.com^
+
+! --- Certificates / revocation checks ---
+crl.comodoca.com
+ocsp.digicert.com
