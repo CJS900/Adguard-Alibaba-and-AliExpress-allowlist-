@@ -30,3 +30,50 @@
 ! --- Certificates / revocation checks ---
 crl.comodoca.com
 ocsp.digicert.com
+
+! Gameloft / Asphalt Legends / Asphalt 8 / Minion Rush
+! Functional allowlist (ads excluded)
+
+! --- Core Gameloft ---
+||gameloft.com^
+||gameloftlive.com^
+||gllive.com^
+||glcdn.co^
+
+! --- Gameloft APIs / live services ---
+||api.gameloft.com^
+||live.gameloft.com^
+||prod.gameloft.com^
+||asphaltlegends.com^
+
+! --- AWS (dynamic game servers) ---
+||amazonaws.com^
+
+! --- Akamai CDN ---
+||akamaihd.net^
+||akamaized.net^
+||edgekey.net^
+
+! --- Unity (required for online features) ---
+||unity3d.com^
+||unity.com^
+||cloud.unity3d.com^
+
+! --- Firebase / Google backend ---
+||firebaseio.com^
+||googleapis.com^
+||gvt1.com^
+||gvt2.com^
+
+! --- Google Play services (Android) ---
+||android.clients.google.com^
+||play.googleapis.com^
+
+! --- Apple validation (iOS safe to keep) ---
+||apple.com^
+||icloud.com^
+
+! --- Certificates ---
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
