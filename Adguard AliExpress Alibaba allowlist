@@ -82,3 +82,22 @@ crl4.digicert.com
 ||*.gameloft.com^
 ||*.gllive.com^
 ||*.gameloftlive.com^
+! --- Gameloft / Asphalt required additions (from latest log) ---
+
+! Gameloft event backend (critical)
+||eve.gameloft.com^
+
+! AWS connectivity checks (required for server validation)
+||diagnostic.networking.aws.dev^
+
+! Unity backend (multiplayer / remote config)
+||cloud.unity3d.com^
+
+! If not already added previously (safe to re-add)
+||prod.gameloft.com^
+||live.gameloft.com^
+||api.gameloft.com^
+
+! If login still fails (rare but possible)
+||firebaseio.com^
+||android.clients.google.com^
