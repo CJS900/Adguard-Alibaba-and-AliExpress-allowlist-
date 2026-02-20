@@ -77,3 +77,8 @@ ocsp.digicert.com
 ocsp.digicert.com
 crl3.digicert.com
 crl4.digicert.com
+
+||eve.gameloft.com^
+||*.gameloft.com^
+||*.gllive.com^
+||*.gameloftlive.com^
