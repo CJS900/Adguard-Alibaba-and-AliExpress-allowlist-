@@ -101,3 +101,36 @@ crl4.digicert.com
 ! If login still fails (rare but possible)
 ||firebaseio.com^
 ||android.clients.google.com^
+
+! --- PlayStation Network (PSN) ---
+||playstation.com^
+||sonyentertainmentnetwork.com^
+||psn.com^
+||api.playstation.com^
+||auth.api.sonyentertainmentnetwork.com^
+||store.playstation.com^
+||transaction.playstation.com^
+
+! --- PlayStation services backend ---
+||np.community.playstation.net^
+||gs2.ww.prod.dl.playstation.net^
+||tmdb.np.dl.playstation.net^
+
+! --- No Man's Sky / Hello Games ---
+||hellogames.org^
+||api.hellogames.org^
+||nomanssky.com^
+
+! --- Multiplayer / relay infrastructure ---
+||amazonaws.com^
+||akamaized.net^
+||akamaihd.net^
+||edgekey.net^
+
+! --- Console certificate validation ---
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
+
+! --- Time sync (important for console auth) ---
+||pool.ntp.org^
