@@ -1,7 +1,7 @@
 ! =========================================================
 ! Unified Functional Allowlist
 ! AliExpress + Gameloft + Steam + PlayStation + No Man’s Sky
-! Designed for AdGuard Home
+! Cleaned + Deduplicated + NMS Fixed
 ! =========================================================
 
 
@@ -27,22 +27,6 @@
 ||taobao.com^
 crl.comodoca.com
 
-
-! =========================
-! Gameloft / Asphalt / Minion Rush
-! =========================
-||gameloft.com^
-||gameloftlive.com^
-||gllive.com^
-||glcdn.co^
-||api.gameloft.com^
-||live.gameloft.com^
-||prod.gameloft.com^
-||eve.gameloft.com^
-||asphaltlegends.com^
-||diagnostic.networking.aws.dev^
-
-
 ! =========================
 ! PlayStation Network
 ! =========================
@@ -52,6 +36,7 @@ crl.comodoca.com
 ||psn.com^
 ||account.sony.com^
 ||api.playstation.com^
+||api.playstation.net^
 ||auth.api.sonyentertainmentnetwork.com^
 ||store.playstation.com^
 ||transaction.playstation.com^
@@ -66,6 +51,7 @@ crl.comodoca.com
 ||hellogames.org^
 ||api.hellogames.org^
 ||nomanssky.com^
+||prod-nms-service.hellogames.com^
 
 
 ! =========================
@@ -77,6 +63,7 @@ crl.comodoca.com
 ||steamcontent.com^
 ||steam-chat.com^
 ||steamserver.net^
+||api.steampowered.com^
 
 
 ! =========================
@@ -85,6 +72,9 @@ crl.comodoca.com
 
 ! AWS (required for Gameloft + NMS + PSN relay)
 ||amazonaws.com^
+
+! CloudFront (required for NMS discovery services)
+||cloudfront.net^
 
 ! Akamai CDN (PlayStation + NMS + others)
 ||akamaized.net^
@@ -104,7 +94,7 @@ crl.comodoca.com
 ||android.clients.google.com^
 ||play.googleapis.com^
 
-! Apple validation (safe)
+! Apple validation
 ||apple.com^
 ||icloud.com^
 
@@ -115,6 +105,3 @@ crl.comodoca.com
 ocsp.digicert.com
 crl3.digicert.com
 crl4.digicert.com
-
-||api.steampowered.com^   (if using Steam)
-||api.playstation.net^    (rare, but possible)
