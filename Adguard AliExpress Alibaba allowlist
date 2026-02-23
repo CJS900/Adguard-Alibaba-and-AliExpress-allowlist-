@@ -1,7 +1,7 @@
 ! =========================================================
 ! Unified Functional Allowlist
-! AliExpress + Gameloft + Steam + PlayStation + No Man’s Sky
-! Cleaned + Deduplicated + NMS Fixed
+! AliExpress + Steam + PlayStation + No Man's Sky
+! Gameloft removed
 ! =========================================================
 
 
@@ -26,6 +26,7 @@
 ||fourier.taobao.com^
 ||taobao.com^
 crl.comodoca.com
+
 
 ! =========================
 ! PlayStation Network
@@ -53,6 +54,14 @@ crl.comodoca.com
 ||nomanssky.com^
 ||prod-nms-service.hellogames.com^
 
+! Cross-Save / Account Sync
+||account.hellogames.com^
+||api.account.hellogames.com^
+||playfabapi.com^
+||playfab.com^
+||execute-api.amazonaws.com^
+||s3.amazonaws.com^
+
 
 ! =========================
 ! Steam
@@ -70,38 +79,25 @@ crl.comodoca.com
 ! Shared Gaming Infrastructure
 ! =========================
 
-! AWS (required for Gameloft + NMS + PSN relay)
+! AWS core
 ||amazonaws.com^
 
-! CloudFront (required for NMS discovery services)
+! CloudFront (required for NMS backend)
 ||cloudfront.net^
 
-! Akamai CDN (PlayStation + NMS + others)
+! Akamai CDN
 ||akamaized.net^
 ||akamaihd.net^
 ||edgekey.net^
-
-! Unity backend
-||unity3d.com^
-||unity.com^
-||cloud.unity3d.com^
-
-! Google / Firebase auth (Android titles)
-||firebaseio.com^
-||googleapis.com^
-||gvt1.com^
-||gvt2.com^
-||android.clients.google.com^
-||play.googleapis.com^
-
-! Apple validation
-||apple.com^
-||icloud.com^
-
-! Time sync (important for console auth)
-||pool.ntp.org^
 
 ! Certificate validation
 ocsp.digicert.com
 crl3.digicert.com
 crl4.digicert.com
+
+! Time sync (console auth stability)
+||pool.ntp.org^
+
+! Apple validation (harmless to keep)
+||apple.com^
+||icloud.com^
