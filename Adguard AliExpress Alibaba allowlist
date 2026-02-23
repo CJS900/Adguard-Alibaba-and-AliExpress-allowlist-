@@ -1,14 +1,17 @@
-! AliExpress / Alibaba functional allowlist
+! =========================================================
+! Unified Functional Allowlist
+! AliExpress + Gameloft + Steam + PlayStation + No Man’s Sky
 ! Designed for AdGuard Home
-! Excludes known ad / marketing endpoints
+! =========================================================
 
-! --- Core domains ---
+
+! =========================
+! AliExpress / Alibaba
+! =========================
 ||aliexpress.com^
 ||alibaba.com^
 ||intl.aliexpress.com^
 ||m.aliexpress.com^
-
-! --- CDN / static content (images, CSS, JS) ---
 ||alicdn.com^
 ||g.alicdn.com^
 ||aeproductsourcesite.alicdn.com^
@@ -16,121 +19,102 @@
 ||alibabausercontent.com^
 ||tbcdn.cn^
 ||tbcache.com^
-
-! --- Backend APIs / cart / login / checkout ---
 ||mmstat.com^
 ||amdc.aliexpress.com^
 ||acs.alibaba.com^
 ||seller-acs.alibaba.com^
-
-! --- Security / anti-bot / validation ---
 ||fourier.taobao.com^
 ||taobao.com^
-
-! --- Certificates / revocation checks ---
 crl.comodoca.com
-ocsp.digicert.com
 
-! Gameloft / Asphalt Legends / Asphalt 8 / Minion Rush
-! Functional allowlist (ads excluded)
 
-! --- Core Gameloft ---
+! =========================
+! Gameloft / Asphalt / Minion Rush
+! =========================
 ||gameloft.com^
 ||gameloftlive.com^
 ||gllive.com^
 ||glcdn.co^
-
-! --- Gameloft APIs / live services ---
 ||api.gameloft.com^
 ||live.gameloft.com^
 ||prod.gameloft.com^
+||eve.gameloft.com^
 ||asphaltlegends.com^
-
-! --- AWS (dynamic game servers) ---
-||amazonaws.com^
-
-! --- Akamai CDN ---
-||akamaihd.net^
-||akamaized.net^
-||edgekey.net^
-
-! --- Unity (required for online features) ---
-||unity3d.com^
-||unity.com^
-||cloud.unity3d.com^
-
-! --- Firebase / Google backend ---
-||firebaseio.com^
-||googleapis.com^
-||gvt1.com^
-||gvt2.com^
-
-! --- Google Play services (Android) ---
-||android.clients.google.com^
-||play.googleapis.com^
-
-! --- Apple validation (iOS safe to keep) ---
-||apple.com^
-||icloud.com^
-
-! --- Certificates ---
-ocsp.digicert.com
-crl3.digicert.com
-crl4.digicert.com
-
-||eve.gameloft.com^
-||*.gameloft.com^
-||*.gllive.com^
-||*.gameloftlive.com^
-! --- Gameloft / Asphalt required additions (from latest log) ---
-
-! Gameloft event backend (critical)
-||eve.gameloft.com^
-
-! AWS connectivity checks (required for server validation)
 ||diagnostic.networking.aws.dev^
 
-! Unity backend (multiplayer / remote config)
-||cloud.unity3d.com^
 
-! If not already added previously (safe to re-add)
-||prod.gameloft.com^
-||live.gameloft.com^
-||api.gameloft.com^
-
-! If login still fails (rare but possible)
-||firebaseio.com^
-||android.clients.google.com^
-
-! --- PlayStation Network (PSN) ---
+! =========================
+! PlayStation Network
+! =========================
 ||playstation.com^
+||playstation.net^
 ||sonyentertainmentnetwork.com^
 ||psn.com^
+||account.sony.com^
 ||api.playstation.com^
 ||auth.api.sonyentertainmentnetwork.com^
 ||store.playstation.com^
 ||transaction.playstation.com^
-
-! --- PlayStation services backend ---
 ||np.community.playstation.net^
 ||gs2.ww.prod.dl.playstation.net^
 ||tmdb.np.dl.playstation.net^
 
-! --- No Man's Sky / Hello Games ---
+
+! =========================
+! No Man's Sky / Hello Games
+! =========================
 ||hellogames.org^
 ||api.hellogames.org^
 ||nomanssky.com^
 
-! --- Multiplayer / relay infrastructure ---
+
+! =========================
+! Steam
+! =========================
+||steampowered.com^
+||steamcommunity.com^
+||steamstatic.com^
+||steamcontent.com^
+||steam-chat.com^
+||steamserver.net^
+
+
+! =========================
+! Shared Gaming Infrastructure
+! =========================
+
+! AWS (required for Gameloft + NMS + PSN relay)
 ||amazonaws.com^
+
+! Akamai CDN (PlayStation + NMS + others)
 ||akamaized.net^
 ||akamaihd.net^
 ||edgekey.net^
 
-! --- Console certificate validation ---
+! Unity backend
+||unity3d.com^
+||unity.com^
+||cloud.unity3d.com^
+
+! Google / Firebase auth (Android titles)
+||firebaseio.com^
+||googleapis.com^
+||gvt1.com^
+||gvt2.com^
+||android.clients.google.com^
+||play.googleapis.com^
+
+! Apple validation (safe)
+||apple.com^
+||icloud.com^
+
+! Time sync (important for console auth)
+||pool.ntp.org^
+
+! Certificate validation
 ocsp.digicert.com
 crl3.digicert.com
 crl4.digicert.com
 
-! --- Time sync (important for console auth) ---
-||pool.ntp.org^
+||api.steampowered.com^   (if using Steam)
+||api.playstation.net^    (rare, but possible)
