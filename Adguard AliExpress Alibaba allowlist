@@ -101,3 +101,54 @@ crl4.digicert.com
 ! Apple validation (harmless to keep)
 ||apple.com^
 ||icloud.com^
+
+
+! =========================
+! VRChat
+! =========================
+||vrchat.com^
+||api.vrchat.cloud^
+||vrchat.cloud^
+||vrchat.net^
+
+! Photon (VRChat multiplayer backend)
+||photonengine.io^
+||exitgames.com^
+
+! Unity services (VRChat dependency)
+||unity3d.com^
+||unity.com^
+||cloud.unity3d.com^
+
+! =========================
+! Easy Anti-Cheat / Epic
+! =========================
+||easyanticheat.net^
+||epicgames.com^
+||epicgames.dev^
+||epicgamescdn.com^
+
+! Epic Online Services (VERY important)
+||api.epicgames.dev^
+||eac-cdn.com^
+
+! =========================
+! Shared backend (required)
+! =========================
+
+! AWS + CDN (critical for both)
+||amazonaws.com^
+||cloudfront.net^
+
+! Akamai (some EAC + VRChat assets)
+||akamaized.net^
+||akamaihd.net^
+||edgekey.net^
+
+! Certificates (EAC fails silently without these)
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
+
+! Time sync (important for anti-cheat validation)
+||pool.ntp.org^
