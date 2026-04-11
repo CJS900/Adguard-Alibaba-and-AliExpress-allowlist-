@@ -1,7 +1,7 @@
 ! =========================================================
 ! Unified Functional Allowlist
-! AliExpress + Steam + PlayStation + No Man's Sky
-! Gameloft removed
+! AliExpress + Steam + PlayStation + No Man's Sky + VRChat + EAC
+! Deduplicated & Cleaned
 ! =========================================================
 
 
@@ -53,8 +53,6 @@ crl.comodoca.com
 ||api.hellogames.org^
 ||nomanssky.com^
 ||prod-nms-service.hellogames.com^
-
-! Cross-Save / Account Sync
 ||account.hellogames.com^
 ||api.account.hellogames.com^
 ||playfabapi.com^
@@ -76,45 +74,68 @@ crl.comodoca.com
 
 
 ! =========================
-! Shared Gaming Infrastructure
-! =========================
-
-! AWS core
-||amazonaws.com^
-
-! CloudFront (required for NMS backend)
-||cloudfront.net^
-
-! Akamai CDN
-||akamaized.net^
-||akamaihd.net^
-||edgekey.net^
-
-! Certificate validation
-ocsp.digicert.com
-crl3.digicert.com
-crl4.digicert.com
-
-! Time sync (console auth stability)
-||pool.ntp.org^
-
-! Apple validation (harmless to keep)
-||apple.com^
-||icloud.com^
-
-
-! =========================
 ! VRChat
 ! =========================
 ||vrchat.com^
 ||api.vrchat.cloud^
 ||vrchat.cloud^
 ||vrchat.net^
+||files.vrchat.cloud^
+||vrchatassets.com^
+||assetbundle.vrchat.cloud^
 
-! Photon (VRChat multiplayer backend)
+! Photon (multiplayer)
 ||photonengine.io^
 ||exitgames.com^
 
+! Unity services
+||unity3d.com^
+||unity.com^
+||cloud.unity3d.com^
+
+
+! =========================
+! Easy Anti-Cheat / Epic
+! =========================
+||easyanticheat.net^
+||epicgames.com^
+||epicgames.dev^
+||epicgamescdn.com^
+||api.epicgames.dev^
+||eac-cdn.com^
+
+
+! =========================
+! Shared Infrastructure
+! =========================
+
+! AWS core + storage + API gateway
+||amazonaws.com^
+||s3.amazonaws.com^
+||*.s3.amazonaws.com^
+||execute-api.amazonaws.com^
+
+! CloudFront (critical for modern games)
+||cloudfront.net^
+||d348imysud55la.cloudfront.net^
+||d3kjluh73b9h9o.cloudfront.net^
+
+! Akamai CDN
+||akamaized.net^
+||akamaihd.net^
+||edgekey.net^
+
+! Time sync
+||pool.ntp.org^
+
+! Certificates
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
+
+! Apple validation
+||apple.com^
+||icloud.com^
 ! Unity services (VRChat dependency)
 ||unity3d.com^
 ||unity.com^
@@ -152,3 +173,32 @@ crl4.digicert.com
 
 ! Time sync (important for anti-cheat validation)
 ||pool.ntp.org^
+
+
+! =========================
+! VRChat Assets / Images FIX
+! =========================
+
+||vrchat.com^
+||api.vrchat.cloud^
+||vrchat.cloud^
+
+! Asset CDN (CRITICAL – fixes "NO IMAGE")
+||api.vrchat.cloud^
+||files.vrchat.cloud^
+||d348imysud55la.cloudfront.net^
+||d3kjluh73b9h9o.cloudfront.net^
+
+! General CloudFront fallback (needed for dynamic assets)
+||cloudfront.net^
+
+! AWS S3 asset storage
+||s3.amazonaws.com^
+||*.s3.amazonaws.com^
+
+! Unity asset backend
+||cloud.unity3d.com^
+
+||vrchatassets.com^
+||assetbundle.vrchat.cloud^
+
