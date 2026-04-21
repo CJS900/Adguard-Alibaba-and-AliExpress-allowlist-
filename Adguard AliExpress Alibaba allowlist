@@ -1,7 +1,8 @@
+
 ! =========================================================
 ! Unified Functional Allowlist
-! AliExpress + Steam + PlayStation + No Man's Sky + VRChat + Beat Saber + EAC
-! Cleaned + Deduplicated + Stability Improvements
+! AliExpress + Steam + PlayStation + No Man's Sky + VRChat + Beat Saber + Synth Riders + EAC
+! Cleaned + Deduplicated + VR Stability Optimized
 ! =========================================================
 
 
@@ -94,9 +95,6 @@ crl.comodoca.com
 ||unity.com^
 ||cloud.unity3d.com^
 
-! VRChat extra CDN stability
-||*.cloudfront.net^
-
 
 ! =========================
 ! Beat Saber / BSManager
@@ -119,9 +117,21 @@ crl.comodoca.com
 ||jsdelivr.net^
 ||cdn.jsdelivr.net^
 
-! Cloudflare fallback (mods often use it)
+! Cloudflare (many mod repos)
 ||cloudflare.com^
 ||*.cloudflare.com^
+
+
+! =========================
+! Synth Riders
+! =========================
+||synthridersvr.com^
+||klugeinteractive.com^
+
+! Uses same backend stack (Photon + AWS + Unity)
+||photonengine.io^
+||exitgames.com^
+||ns.exitgamescloud.com^
 
 
 ! =========================
@@ -136,7 +146,7 @@ crl.comodoca.com
 
 
 ! =========================
-! Shared Infrastructure
+! Shared Infrastructure (CRITICAL)
 ! =========================
 
 ! AWS core + storage + API gateway
@@ -145,36 +155,19 @@ crl.comodoca.com
 ||*.s3.amazonaws.com^
 ||execute-api.amazonaws.com^
 
-! CloudFront (critical for modern games)
+! CloudFront (MOST IMPORTANT for VR apps)
 ||cloudfront.net^
+||*.cloudfront.net^
 
 ! Akamai CDN
 ||akamaized.net^
 ||akamaihd.net^
 ||edgekey.net^
 
-! Time sync
+! Time sync (fixes auth issues)
 ||pool.ntp.org^
 
-! Certificates
-ocsp.digicert.com
-crl3.digicert.com
-crl4.digicert.com
-
-! Apple validation
-||apple.com^
-||icloud.com^||d348imysud55la.cloudfront.net^
-||d3kjluh73b9h9o.cloudfront.net^
-
-! Akamai CDN
-||akamaized.net^
-||akamaihd.net^
-||edgekey.net^
-
-! Time sync
-||pool.ntp.org^
-
-! Certificates
+! Certificates (VERY important for EAC / VR)
 ocsp.digicert.com
 crl3.digicert.com
 crl4.digicert.com
@@ -182,74 +175,7 @@ crl4.digicert.com
 ! Apple validation
 ||apple.com^
 ||icloud.com^
-! Unity services (VRChat dependency)
-||unity3d.com^
-||unity.com^
-||cloud.unity3d.com^
 
-! =========================
-! Easy Anti-Cheat / Epic
-! =========================
-||easyanticheat.net^
-||epicgames.com^
-||epicgames.dev^
-||epicgamescdn.com^
-
-! Epic Online Services (VERY important)
-||api.epicgames.dev^
-||eac-cdn.com^
-
-! =========================
-! Shared backend (required)
-! =========================
-
-! AWS + CDN (critical for both)
-||amazonaws.com^
-||cloudfront.net^
-
-! Akamai (some EAC + VRChat assets)
-||akamaized.net^
-||akamaihd.net^
-||edgekey.net^
-
-! Certificates (EAC fails silently without these)
-ocsp.digicert.com
-crl3.digicert.com
-crl4.digicert.com
-
-! Time sync (important for anti-cheat validation)
-||pool.ntp.org^
-
-! VRChat full functional set (safe)
-||vrchat.com^
-||vrchat.net^
-||vrchat.cloud^
-||api.vrchat.cloud^
-||files.vrchat.cloud^
-||assetbundle.vrchat.cloud^
-||vrchatassets.com^
-
-! Photon networking
-||photonengine.io^
-||exitgames.com^
-||ns.exitgamescloud.com^
-
-! Unity backend
-||unity3d.com^
-||unity.com^
-||cloud.unity3d.com^
-
-! Core infrastructure
-||amazonaws.com^
-||cloudfront.net^
-
-! Optional fallback CDN nodes (rare but safe)
-||*.cloudfront.net^
-
-! Certificates
-ocsp.digicert.com
-crl3.digicert.com
-crl4.digicert.com
-
-! Time sync
-||pool.ntp.org^
+! Oculus / Meta (only if using Quest)
+||oculus.com^
+||meta.com^
