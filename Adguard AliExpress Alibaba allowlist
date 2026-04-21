@@ -1,7 +1,7 @@
 ! =========================================================
 ! Unified Functional Allowlist
-! AliExpress + Steam + PlayStation + No Man's Sky + VRChat + EAC
-! Deduplicated & Cleaned
+! AliExpress + Steam + PlayStation + No Man's Sky + VRChat + Beat Saber + EAC
+! Cleaned + Deduplicated + Stability Improvements
 ! =========================================================
 
 
@@ -77,21 +77,51 @@ crl.comodoca.com
 ! VRChat
 ! =========================
 ||vrchat.com^
-||api.vrchat.cloud^
-||vrchat.cloud^
 ||vrchat.net^
+||vrchat.cloud^
+||api.vrchat.cloud^
 ||files.vrchat.cloud^
-||vrchatassets.com^
 ||assetbundle.vrchat.cloud^
+||vrchatassets.com^
 
 ! Photon (multiplayer)
 ||photonengine.io^
 ||exitgames.com^
+||ns.exitgamescloud.com^
 
 ! Unity services
 ||unity3d.com^
 ||unity.com^
 ||cloud.unity3d.com^
+
+! VRChat extra CDN stability
+||*.cloudfront.net^
+
+
+! =========================
+! Beat Saber / BSManager
+! =========================
+||beatsaver.com^
+||api.beatsaver.com^
+||beatmods.com^
+||api.beatmods.com^
+||bsmg.wiki^
+||scoresaber.com^
+||api.scoresaber.com^
+
+! GitHub (CRITICAL for mods)
+||github.com^
+||api.github.com^
+||raw.githubusercontent.com^
+||objects.githubusercontent.com^
+
+! CDN for mods
+||jsdelivr.net^
+||cdn.jsdelivr.net^
+
+! Cloudflare fallback (mods often use it)
+||cloudflare.com^
+||*.cloudflare.com^
 
 
 ! =========================
@@ -117,7 +147,23 @@ crl.comodoca.com
 
 ! CloudFront (critical for modern games)
 ||cloudfront.net^
-||d348imysud55la.cloudfront.net^
+
+! Akamai CDN
+||akamaized.net^
+||akamaihd.net^
+||edgekey.net^
+
+! Time sync
+||pool.ntp.org^
+
+! Certificates
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
+
+! Apple validation
+||apple.com^
+||icloud.com^||d348imysud55la.cloudfront.net^
 ||d3kjluh73b9h9o.cloudfront.net^
 
 ! Akamai CDN
@@ -174,31 +220,36 @@ crl4.digicert.com
 ! Time sync (important for anti-cheat validation)
 ||pool.ntp.org^
 
-
-! =========================
-! VRChat Assets / Images FIX
-! =========================
-
+! VRChat full functional set (safe)
 ||vrchat.com^
-||api.vrchat.cloud^
+||vrchat.net^
 ||vrchat.cloud^
-
-! Asset CDN (CRITICAL – fixes "NO IMAGE")
 ||api.vrchat.cloud^
 ||files.vrchat.cloud^
-||d348imysud55la.cloudfront.net^
-||d3kjluh73b9h9o.cloudfront.net^
+||assetbundle.vrchat.cloud^
+||vrchatassets.com^
 
-! General CloudFront fallback (needed for dynamic assets)
-||cloudfront.net^
+! Photon networking
+||photonengine.io^
+||exitgames.com^
+||ns.exitgamescloud.com^
 
-! AWS S3 asset storage
-||s3.amazonaws.com^
-||*.s3.amazonaws.com^
-
-! Unity asset backend
+! Unity backend
+||unity3d.com^
+||unity.com^
 ||cloud.unity3d.com^
 
-||vrchatassets.com^
-||assetbundle.vrchat.cloud^
+! Core infrastructure
+||amazonaws.com^
+||cloudfront.net^
 
+! Optional fallback CDN nodes (rare but safe)
+||*.cloudfront.net^
+
+! Certificates
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
+
+! Time sync
+||pool.ntp.org^
