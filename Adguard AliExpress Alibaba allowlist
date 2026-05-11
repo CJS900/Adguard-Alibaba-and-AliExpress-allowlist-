@@ -179,3 +179,44 @@ crl4.digicert.com
 ! Oculus / Meta (only if using Quest)
 ||oculus.com^
 ||meta.com^
+
+! =========================
+! Train Sim World 6 / Dovetail Live
+! =========================
+
+! Core Dovetail services
+||dovetailgames.com^
+||live.dovetailgames.com^
+||api.dovetailgames.com^
+
+! Dovetail Live / account backend
+||accounts.dovetailgames.com^
+||auth.dovetailgames.com^
+
+! Unreal / EOS backend
+||epicgames.com^
+||epicgames.dev^
+||api.epicgames.dev^
+
+! CDN / game delivery
+||cloudfront.net^
+||amazonaws.com^
+||akamaized.net^
+||akamaihd.net^
+||edgekey.net^
+
+! Steam integration
+||steampowered.com^
+||steamcommunity.com^
+||steamstatic.com^
+
+! Microsoft auth fallback (used by some Unreal integrations)
+||login.live.com^
+
+! Certificates / auth
+ocsp.digicert.com
+crl3.digicert.com
+crl4.digicert.com
+
+! Time sync
+||pool.ntp.org^
