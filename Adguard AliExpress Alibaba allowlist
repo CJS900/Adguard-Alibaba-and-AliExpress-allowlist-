@@ -220,3 +220,19 @@ crl4.digicert.com
 
 ! Time sync
 ||pool.ntp.org^
+
+
+! VRChat additional asset endpoints
+
+||api.vrchat.cloud^
+||files.vrchat.cloud^
+||assetbundle.vrchat.cloud^
+
+||amazonaws.com^
+||s3.amazonaws.com^
+||*.s3.amazonaws.com^
+
+||cloudfront.net^
+||*.cloudfront.net^
+
+||vrchatusercontent.com^
