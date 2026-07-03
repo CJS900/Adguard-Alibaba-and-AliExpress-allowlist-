@@ -236,3 +236,8 @@ crl4.digicert.com
 ||*.cloudfront.net^
 ||assets.vrchat.com^
 ||vrchatusercontent.com^
+
+
+! Android suspected adware to be blocked
+||hwprize.com^
+||bytelemon.com^
